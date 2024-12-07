@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { Fragment, useState, useEffect } from "react";
 import BaseUI from "../../../components/baseUI/baseUI";
 import { styled } from "@mui/material";
@@ -33,7 +35,7 @@ const CrearGrupoEmpresa = () => {
     const fetchEstudiante = async (idEstudiante) => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/estudiante/getDatosEst/${idEstudiante}`,{credentials: 'include'}
+          `${API_HOST}/estudiante/getDatosEst/${idEstudiante}`,{credentials: 'include'}
         );
         if (!response.ok) throw new Error("Error al recuperar estudiante");
         const data = await response.json();
@@ -61,7 +63,7 @@ const CrearGrupoEmpresa = () => {
     if (nombreLargo && nombreCorto && estudiante.idEstudiante) {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/crearGrupoEmpresa/paso1",
+          API_HOST+"/crearGrupoEmpresa/paso1",
           {
             method: "POST",
             headers: {

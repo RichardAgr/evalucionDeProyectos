@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { useState, useEffect } from 'react';
 import ListaDefinitivaN from '../../../components/listaDefinitiva/listaDefinitivaN';
 import BaseUI from '../../../components/baseUI/baseUI';
@@ -27,7 +29,7 @@ function ListaEmpresaSprints() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const url = 'http://localhost:8000/api/empresasSinSprintCalificado'
+            const url = API_HOST+"/empresasSinSprintCalificado"
             const body = {
               method: 'GET',
               headers: {

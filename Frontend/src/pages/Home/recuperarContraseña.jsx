@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { useState } from "react";
 import {
   Container,
@@ -30,7 +32,7 @@ function RecuperarContrasena() {
     const randomWord2 = Math.random().toString(36).substring(2, 8);
     const code = `${randomWord1}${randomWord2}`;
     const encryptedCode = encrypt(code);
-    const url = "http://localhost:8000/api/recuperarContrasena";
+    const url = API_HOST+"/recuperarContrasena";
     const bodyFetch = {
       method: "POST",
       headers: {
@@ -96,7 +98,7 @@ function RecuperarContrasena() {
 
   const changePassword = async(newPassword) => {
     console.log("Nueva contraseña:", newPassword);
-    const url = "http://localhost:8000/api/cambiarContrasena";
+    const url = API_HOST+"/cambiarContrasena";
     const bodyFetch = {
       method: "POST",
       headers: {

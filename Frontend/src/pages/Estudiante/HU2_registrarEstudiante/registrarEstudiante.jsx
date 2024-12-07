@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import React, { useState } from "react";
 import {
   TextField,

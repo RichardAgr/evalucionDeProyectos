@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import {useState, useEffect } from 'react';
 import ListaDefinitivaN from '../../../components/listaDefinitiva/listaDefinitivaN';
 const columns = [
@@ -33,7 +35,7 @@ export default function DataTable() {
   const fetchEstudiantes = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/docente/listaEstudiantes?` +
+      const response = await fetch(API_HOST+"docente/listaEstudiantes?" +
         new URLSearchParams({
           idGrupo,
         }),{

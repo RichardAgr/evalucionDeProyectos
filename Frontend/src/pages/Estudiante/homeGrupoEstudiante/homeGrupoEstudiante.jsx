@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import Footer from "../../../components/baseUI/Footer/footer.jsx";
 import Header from "../../../components/baseUI/Header/header.jsx";
 import { styled } from "@mui/material/styles";
@@ -16,7 +18,7 @@ function HomeEstudiante() {
   const navigate =useNavigate()
   useEffect(()=>{
     const getOrigin = async() =>{
-      const link = 'http://localhost:8000/api/estudiante/getDataEstudiante'
+      const link = API_HOST+"/estudiante/getDataEstudiante"
       const body = {
         method: "GET",
         headers: {"Content-Type": "application/json"},

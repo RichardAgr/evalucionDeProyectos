@@ -1,7 +1,9 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 export const getSprintSemanas = async (idSprint) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/estudiante/sprint/semana/${idSprint}`,
+      `${API_HOST}/estudiante/sprint/semana/${idSprint}`,
       {
         method: "GET",
         headers: {
@@ -26,7 +28,7 @@ export const getSprintSemanas = async (idSprint) => {
 export const actualizarSprint = async (idSprint, comentario, nota) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/sprint/${idSprint}/actualizar`,
+      `${API_HOST}/sprint/${idSprint}/actualizar`,
       {
         method: "POST",
         headers: {
@@ -55,7 +57,7 @@ export const actualizarSprint = async (idSprint, comentario, nota) => {
 export const aceptarEntregables = async (aceptados) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/aceptarEntregables`,
+      `${API_HOST}/aceptarEntregables`,
       {
         method: "POST",
         headers: {
@@ -81,7 +83,7 @@ export const aceptarEntregables = async (aceptados) => {
 export const getSprintSemanasTareas = async (idEmpresa) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/empresa/${idEmpresa}/sprintsSemanasTareas`,
+      `${API_HOST}/empresa/${idEmpresa}/sprintsSemanasTareas`,
       {
         method: "GET",
         headers: {

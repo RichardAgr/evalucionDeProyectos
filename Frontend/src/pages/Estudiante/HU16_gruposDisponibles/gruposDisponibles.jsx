@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -6,7 +8,7 @@ import { Box, styled } from "@mui/material";
 
 const getGruposDocentes = async () => {
   try {
-    const response = await fetch("http://localhost:8000/api/estudiante/gruposDocente", {
+    const response = await fetch(API_HOST+"/estudiante/gruposDocente", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +33,7 @@ const getGruposDocentes = async () => {
 
 const estaMatriculado = async (idEstudiante) => {
   try {
-    const response = await fetch(`http://localhost:8000/api/estaMatriculado/${idEstudiante}`, {
+    const response = await fetch(`${API_HOST}/estaMatriculado/${idEstudiante}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

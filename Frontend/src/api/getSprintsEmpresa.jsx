@@ -1,6 +1,8 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 export const getSprintsEmpresa = async (idEmpresa, idDocente) => {
     try {
-        const response = await fetch(`http://localhost:8000/api/empresa/${idEmpresa}/${idDocente}/sprints`, {
+        const response = await fetch(`${API_HOST}/empresa/${idEmpresa}/${idDocente}/sprints`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

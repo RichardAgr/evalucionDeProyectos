@@ -1,5 +1,5 @@
 // definir la url inicial de la api
-const BASE_URL = "http://localhost:8000/api";
+const API_HOST = import.meta.env.VITE_HOST
 
 /**
  * modifica los datos para configurar una evaluacion final
@@ -7,7 +7,7 @@ const BASE_URL = "http://localhost:8000/api";
  */
 export async function configurarEvaluacion(datosEvaluacion) {
   try {
-    const response = await fetch(`${BASE_URL}/configurarEvaluacion`, {
+    const response = await fetch(`${API_HOST}/configurarEvaluacion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export async function configurarEvaluacion(datosEvaluacion) {
 
 export async function getEvaluacionesGrupo(idGrupo) {
     const response = await fetch(
-      `${BASE_URL}/getEvaluacionesGrupo/${idGrupo}`,
+      `${API_HOST}/getEvaluacionesGrupo/${idGrupo}`,
       {
         method: "GET",
         headers: {
@@ -47,7 +47,7 @@ export async function getEvaluacionesGrupo(idGrupo) {
 
 export async function getDatosEvaluacion(idGrupo) {
     const response = await fetch(
-      `${BASE_URL}/getDatosEvaluacion/${idGrupo}`,
+      `${API_HOST}/getDatosEvaluacion/${idGrupo}`,
       {
         method: "GET",
         headers: {

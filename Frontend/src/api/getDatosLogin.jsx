@@ -1,5 +1,7 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 export const getOriginDocente = async () => {
-    const url = "http://localhost:8000/api/docente/getGrupo";
+    const url = API_HOST+"/docente/getGrupo";
     const bodyFetch = {
       method: "GET",
       headers: {

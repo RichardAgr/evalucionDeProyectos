@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { Fragment, useState, useEffect } from "react";
 import BaseUI from "../../../components/baseUI/baseUI.jsx";
 import TablaEvaluacionSemanal from "../../../components/tablaEvaluacionSemanal/tablaEvaluacionSemanal.jsx";
@@ -53,7 +55,7 @@ const SeguimientoSemanal = () => {
 
   const getNombreEmpresa = async () => {
     try {
-        const response = await fetch(`http://localhost:8000/api/empresa/${idEmpresa}`, {
+        const response = await fetch(`${API_HOST}/empresa/${idEmpresa}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { Fragment, useState, useEffect } from "react";
 import BaseUI from "../../../components/baseUI/baseUI";
 import { styled } from "@mui/material"; 
@@ -26,7 +28,7 @@ const PublicarGrupoEmpresa = () => {
     useEffect(() => {
         const fetchInformacion = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/estudiante/getDatosEstEmpresa/${idEstudiante}`,{credentials: 'include'});
+                const response = await fetch(`${API_HOST}/estudiante/getDatosEstEmpresa/${idEstudiante}`,{credentials: 'include'});
                 if (!response.ok) {
                     if (response.status === 404) {
                         setSnackbar({
@@ -105,7 +107,7 @@ const PublicarGrupoEmpresa = () => {
             return
         }
         try {
-            const response = await fetch(`http://localhost:8000/api/crearGrupoEmpresa/paso3/${idEstudiante}`, {
+            const response = await fetch(`${API_HOST}/crearGrupoEmpresa/paso3/${idEstudiante}`, {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -18,7 +20,7 @@ function EmpresasTable() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/empresas/", {credentials: 'include'})
+    fetch(API_HOST+"/empresas/", {credentials: 'include'})
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { useState, useEffect } from "react";
 import {
   Container,
@@ -149,7 +151,7 @@ export default function ModificarListaTareas() {
     }
     try {
       const response = await fetch(
-        `http://localhost:8000/api/estudiante/crearListaTareas`,
+        API_HOST+"/estudiante/crearListaTareas",
         {
           method: "POST",
           headers: {
@@ -179,7 +181,7 @@ export default function ModificarListaTareas() {
       console.log(tasksEliminadas)
       try {
         const response = await fetch(
-          `http://localhost:8000/api/estudiante/eliminarTareas`,
+          API_HOST+"http://localhost:8000/api/estudiante/eliminarTareas",
           {
             method: "POST",
             headers: {

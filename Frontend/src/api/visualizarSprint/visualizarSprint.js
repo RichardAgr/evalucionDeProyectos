@@ -1,5 +1,5 @@
 // definir la url inicial de la api
-const BASE_URL = 'http://localhost:8000/api';
+const API_HOST = import.meta.env.VITE_HOST
 
 /**
  * Obtiene los datos de un sprint específico por su ID
@@ -8,7 +8,7 @@ const BASE_URL = 'http://localhost:8000/api';
  */
 export async function getSprintPorId(idSprint) {
   try {
-    const response = await fetch(`${BASE_URL}/getSprintPorId?idSprint=${idSprint}`, {
+    const response = await fetch(`${API_HOST}/getSprintPorId?idSprint=${idSprint}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export async function getSprintPorId(idSprint) {
  */
 export async function getListaSprintsPorIdEmpresa(idEmpresa) {
   try {
-    const response = await fetch(`${BASE_URL}/getListaSprintsPorIdEmpresa?idEmpresa=${idEmpresa}`, {
+    const response = await fetch(`${API_HOST}/getListaSprintsPorIdEmpresa?idEmpresa=${idEmpresa}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

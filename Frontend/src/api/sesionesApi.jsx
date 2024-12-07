@@ -1,7 +1,9 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import Cookies from 'js-cookie';
 export const logout = async () => {
     try {
-        await fetch('http://localhost:8000/api/logout', {
+        await fetch(API_HOST+"/logout", {
             method: 'POST',
             headers: {
                 'Authorization': true,

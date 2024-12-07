@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import {
     Container,
     Box,
@@ -25,7 +27,7 @@ import { useState } from "react";
         console.log(nombreCuenta)
         console.log(contrasena)
       try {
-        const response = await fetch('http://localhost:8000/api/loginAdmin', {
+        const response = await fetch(API_HOST+"/loginAdmin", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

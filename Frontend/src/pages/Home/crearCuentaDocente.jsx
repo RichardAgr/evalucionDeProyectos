@@ -1,4 +1,6 @@
 // eslint-disable-next-line no-unused-vars
+const API_HOST = import.meta.env.VITE_HOST
+
 import React from "react";
 import {
   Button,
@@ -39,7 +41,7 @@ const validationSchema = Yup.object({
 const CrearCuentaDocente = () => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await fetch("http://localhost:8000/api/crearCuentaDocente", {
+      const response = await fetch(API_HOST+"/crearCuentaDocente", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

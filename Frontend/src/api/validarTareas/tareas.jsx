@@ -1,6 +1,9 @@
+const API_HOST = import.meta.env.VITE_HOST
+
+
 export const getTareaData = async (idTarea, idEmpresa) => {
   try {
-    const response = await fetch(`http://localhost:8000/api/tarea/${idTarea}/${idEmpresa}`, {
+    const response = await fetch(`${API_HOST}/tarea/${idTarea}/${idEmpresa}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +26,7 @@ export const getTareaData = async (idTarea, idEmpresa) => {
 export const calificarTarea = async (idTarea, nota, comentario_docente) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/tarea/${idTarea}/calificar`,
+      `${API_HOST}/tarea/${idTarea}/calificar`,
       {
         method: "POST",
         headers: {
@@ -66,7 +69,7 @@ export const updateTarea = async (idTarea, formData) => {
 
     // Enviar solicitud con FormData
     const response = await fetch(
-      `http://localhost:8000/api/tarea/${idTarea}/guardar`,
+      `${API_HOST}/tarea/${idTarea}/guardar`,
       {
         method: "POST",
         body: data,
@@ -88,7 +91,7 @@ export const updateTarea = async (idTarea, formData) => {
 export const getTareasSemana = async (idEmpresa, idSemana) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/empresa/${idEmpresa}/semana/${idSemana}/tareas`,
+      `${API_HOST}/empresa/${idEmpresa}/semana/${idSemana}/tareas`,
       {
         method: "GET",
         headers: {
@@ -118,7 +121,7 @@ export const updateTareasSemana = async (
 ) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/empresa/${idEmpresa}/sprint/${idSprint}/semana/${idSemana}/tareas`,
+      `${API_HOST}/empresa/${idEmpresa}/sprint/${idSprint}/semana/${idSemana}/tareas`,
       {
         method: "PUT",
         headers: {

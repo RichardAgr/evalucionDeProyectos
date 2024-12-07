@@ -1,8 +1,9 @@
+const API_HOST = import.meta.env.VITE_HOST
 
 export const getPlanificacionesAceptadas   = async () => {
   
     try {
-      const response = await fetch(`http://localhost:8000/api/planificacionAceptadas`, {
+      const response = await fetch(`${API_HOST}/planificacionAceptadas`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

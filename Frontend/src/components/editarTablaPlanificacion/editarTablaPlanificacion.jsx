@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+const API_HOST = import.meta.env.VITE_HOST
+
 import { Fragment, useEffect, useState } from "react";
 import {
   Table,
@@ -266,7 +268,7 @@ export default function EditarPlanificacion({ planificacionData, idEmpresa }) {
     };
     console.log(dataSprint);
     const response = await fetch(
-      "http://localhost:8000/api/planificacion/guardarPlanificacion",
+      API_HOST+"/planificacion/guardarPlanificacion",
       {
         method: "POST",
         headers: {
@@ -287,7 +289,7 @@ export default function EditarPlanificacion({ planificacionData, idEmpresa }) {
     } else {
       console.log("Planificacion modificada con exito.");
       const responseSprint = await fetch(
-        "http://localhost:8000/api/planificacion/guardarSprints",
+        API_HOST+"/planificacion/guardarSprints",
         {
           method: "POST",
           headers: {
@@ -351,7 +353,7 @@ export default function EditarPlanificacion({ planificacionData, idEmpresa }) {
             entregables: entregables[index] || [], // Asignar entregables correspondiente o un array vacío
           }));
           const responseEntregables = await fetch(
-            "http://localhost:8000/api/planificacion/guardarEntregables",
+            API_HOST+"/planificacion/guardarEntregables",
             {
               method: "POST",
               headers: {

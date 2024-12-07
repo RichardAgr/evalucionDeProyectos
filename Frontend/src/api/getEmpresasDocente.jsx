@@ -1,6 +1,8 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 export const getEmpresasDocente = async (idDocente) => {
     try {
-        const response = await fetch(`http://localhost:8000/api/docente/${idDocente}/empresas`, {
+        const response = await fetch(`${API_HOST}/docente/${idDocente}/empresas`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

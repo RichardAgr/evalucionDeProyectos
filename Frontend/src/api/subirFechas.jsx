@@ -1,5 +1,7 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 export const fechasSubmit = async (valores) => {
-        const response = await fetch('http://localhost:8000/api/grupo/actualizar', {
+        const response = await fetch(API_HOST+"/grupo/actualizar", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

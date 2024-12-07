@@ -1,4 +1,6 @@
 
+const API_HOST = import.meta.env.VITE_HOST
+
 import {useState} from "react";
 import {
   Button,
@@ -49,7 +51,7 @@ const CrearCuentaEstudiante = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch("http://localhost:8000/api/crearCuentaEstudiante", {
+      const response = await fetch(API_HOST+"/crearCuentaEstudiante", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

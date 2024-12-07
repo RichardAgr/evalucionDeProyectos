@@ -1,3 +1,5 @@
+const API_HOST = import.meta.env.VITE_HOST
+
 import { useEffect } from 'react';
 import Loading from '../../../components/loading/loading';
 import { useNavigate } from 'react-router-dom';
@@ -5,7 +7,7 @@ function RedirigirHome() {
     const navigate =useNavigate()
     useEffect(()=>{
       const getOriginDocente= async () =>{
-        const url = "http://localhost:8000/api/docente/getGrupo";
+        const url = API_HOST+"/docente/getGrupo";
         const bodyFetch = {
           method: "GET",
           headers: {
